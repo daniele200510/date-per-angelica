@@ -47,7 +47,7 @@
     main {
       width: min(100% - 28px, 470px);
       margin: auto;
-      padding: 28px 0 34px;
+      padding: 28px 0 12px;
     }
 
     .hero { text-align: center; }
@@ -198,6 +198,7 @@
       margin-top: 16px;
       padding: 24px 18px 20px;
       overflow: hidden;
+      contain: paint;
       text-align: center;
     }
 
@@ -214,6 +215,7 @@
       justify-content: center;
       gap: 12px;
       overflow: hidden;
+      contain: layout paint;
       touch-action: manipulation;
       overscroll-behavior: contain;
     }
@@ -354,7 +356,9 @@
       'Il sì sta diventando grandissimo ✨'
     ];
 
-    no.addEventListener('click', () => {
+    no.addEventListener('click', (event) => {
+      event.preventDefault();
+      no.blur();
       noCount += 1;
       const growth = Math.min(1 + noCount * .22, 3.2);
       yes.style.transform = `scale(${growth})`;
