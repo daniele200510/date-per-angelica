@@ -8,9 +8,9 @@
   <style>
     :root {
       --pink: #ff6fae;
-      --deep-pink: #d94f8d;
-      --ink: #5c2944;
-      --soft: #fff1f7;
+      --deep-pink: #a452c5;
+      --ink: #432c5d;
+      --soft: #f4efff;
       --card: rgba(255, 255, 255, .8);
       --shadow: 0 18px 45px rgba(214, 75, 132, .18);
     }
@@ -18,6 +18,7 @@
     * { box-sizing: border-box; }
     html {
       min-height: 100%;
+      height: auto;
       overflow-x: hidden;
       background: var(--soft);
     }
@@ -25,12 +26,13 @@
     body {
       margin: 0;
       min-height: 0;
+      height: auto;
       overflow-x: hidden;
       overscroll-behavior-x: none;
       color: var(--ink);
       background:
         radial-gradient(circle at 10% 8%, #ffd5e8 0 7%, transparent 7.3%),
-        radial-gradient(circle at 93% 88%, #ffd5e8 0 10%, transparent 10.3%),
+        radial-gradient(circle at 93% 88%, #e6d8ff 0 10%, transparent 10.3%),
         linear-gradient(145deg, #fff8fb, var(--soft));
       font-family: ui-rounded, "Avenir Next", system-ui, -apple-system, sans-serif;
     }
@@ -45,13 +47,13 @@
       animation: float 5s ease-in-out infinite;
     }
 
-    body::before { content: "💞"; top: 9vh; left: 4vw; }
+    body::before { content: "🎳"; top: 9vh; left: 4vw; }
     body::after { content: "💞"; right: 5vw; bottom: 9vh; animation-delay: -2s; }
 
     main {
       width: min(100% - 28px, 470px);
       margin: auto;
-      padding: 28px 0 12px;
+      padding: 28px 0 0;
     }
 
     .hero { text-align: center; }
@@ -136,22 +138,6 @@
     .date-card strong { display: block; font-size: 1.16rem; }
     .date-card span { font-size: .9rem; opacity: .92; }
 
-    .outfit-card {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding: 15px 18px;
-      border: 2px solid #ffc2dc;
-      border-radius: 24px;
-      background: #fff8fc;
-      box-shadow: 0 10px 24px rgba(214, 75, 132, .11);
-    }
-
-    .outfit-icon { font-size: 1.8rem; }
-    .outfit-card strong { display: block; font-size: .96rem; }
-    .outfit-card span { display: block; margin-top: 3px; color: #8b526b; font-size: .82rem; }
-
     .plan-card { padding: 20px; }
 
     .section-title {
@@ -175,7 +161,7 @@
       height: 42px;
       place-items: center;
       border-radius: 15px;
-      background: #ffe1ee;
+      background: #eadcff;
       font-size: 1.35rem;
     }
 
@@ -198,11 +184,11 @@
 
     .question-card {
       position: relative;
-      min-height: 255px;
       margin-top: 16px;
       padding: 24px 18px 20px;
       overflow: hidden;
       text-align: center;
+      margin-bottom: 0;
     }
 
     .question-card::before { content: "✦  ✦"; display: block; margin-bottom: 10px; color: #f39ac0; letter-spacing: 8px; }
@@ -286,45 +272,39 @@
 <body>
   <main>
     <header class="hero">
-      <div class="eyebrow">invito speciale per</div>
+      <div class="eyebrow">bowling date per</div>
       <div class="heart-connection" aria-hidden="true"><span>💞</span><i></i><span>💞</span></div>
       <h1>Angelica <span aria-hidden="true">💞</span></h1>
-      <p class="subtitle">Ho organizzato un piccolo date tutto per noi… ti va di venire con me?</p>
+      <p class="subtitle">Ho organizzato una serata carina tutta per noi… ti va di venire?</p>
     </header>
 
     <section class="date-card" aria-label="Data dell'appuntamento">
-      <div class="date-icon">🗓️</div>
-      <div><strong>Sabato 29 agosto · ore 16:00</strong><span>così hai tutto il tempo per prepararti ✨</span></div>
+      <div class="date-icon">🎳</div>
+      <div><strong>Sabato 29 agosto · dalle 19:00</strong><span>cena insieme, bowling e cuori 💞</span></div>
     </section>
 
-    <section class="outfit-card" aria-label="Outfit consigliato">
-      <div class="outfit-icon">🎀</div>
-      <div><strong>Outfit: cute e carino <span aria-hidden="true">💞</span></strong><span>Rosa pastello e Jordan rosa <span aria-hidden="true">💞</span></span></div>
-    </section>
-
-    <section class="plan-card" aria-label="Programma del date">
-      <h2 class="section-title">Il nostro mini itinerario <span aria-hidden="true">💞</span></h2>
+    <section class="plan-card" aria-label="Programma della serata">
+      <h2 class="section-title">Il nostro programma <span aria-hidden="true">🎳</span> <span aria-hidden="true">💞</span></h2>
       <div class="stop">
-        <div class="stop-icon">🍵</div>
+        <div class="stop-icon">🚗</div>
         <div>
-          <h2>Prima: matcha al McDonald’s Drive-in</h2>
-          <p>Una dolce sosta per iniziare la passeggiata con la nostra bevanda preferita.</p>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=McDonald%27s+Drive-in+Casier+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
+          <h2>Ore 19:00 · Ti vengo a prendere</h2>
+          <p>Andiamo a casa mia e ceniamo insieme, con calma e tante coccole.</p>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon">🌿</div>
+        <div class="stop-icon">🎳</div>
         <div>
-          <h2>Poi: passeggiata al Cimitero dei Burci</h2>
-          <p>Casier, Treviso — tartarughe e barche distrutte sull’acqua, come in un quadro 🐢🛶</p>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cimitero+dei+Burci%2C+Casier%2C+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
+          <h2>Ore 20:00 · Sala giochi a Lancenigo</h2>
+          <p>Andiamo a giocare a bowling a Treviso Lancenigo: strike, risate e cuori 💞</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bowling+Treviso+Lancenigo" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
         </div>
       </div>
     </section>
 
     <section class="question-card" aria-label="Risposta all'invito">
-      <h2>Allora… vieni al date con me?</h2>
-      <p id="message">Prometto una passeggiata carina e tante coccole.</p>
+      <h2>Allora… vieni a giocare con me?</h2>
+      <p id="message">Prometto cena insieme, bowling e tante coccole.</p>
       <div class="actions">
         <button id="yes" type="button">Sì, certo! <span aria-hidden="true">💞</span></button>
         <button id="no" type="button">No 🙈</button>
@@ -337,7 +317,7 @@
     <div class="success-box">
       <div class="success-heart">💞</div>
       <h2>Yay, sapevo di sì!</h2>
-      <p>Allora è ufficiale: 29 agosto alle 16.<br>Non vedo l’ora di stare con te, Angelica ✨</p>
+      <p>Allora è ufficiale: alle 19 ti vengo a prendere.<br>Ceniamo insieme e alle 20 si va a bowling 🎳</p>
       <p class="love-note">ti voglio bene cacca <span aria-hidden="true">💞</span></p>
     </div>
   </div>
@@ -352,8 +332,8 @@
 
     const messages = [
       'Sicura sicura? 🥺',
-      'Posso offrire io il matcha… 🍵',
-      'Il Cimitero dei Burci ci aspetta 🌿',
+      'Ti vengo a prendere io 🚗',
+      'Ceniamo insieme a casa mia 🍝',
       'Un ultimo pensierino? ✨',
       'Il sì sta diventando grandissimo ✨'
     ];
