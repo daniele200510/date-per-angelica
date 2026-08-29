@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff1f7">
+  <title>Un date per Angelica 💗</title>
+  <style>
+    :root {
+      --pink: #ff6fae;
+      --deep-pink: #d94f8d;
+      --ink: #5c2944;
+      --soft: #fff1f7;
+      --card: rgba(255, 255, 255, .8);
+      --shadow: 0 18px 45px rgba(214, 75, 132, .18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      overflow-x: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 8%, #ffd5e8 0 7%, transparent 7.3%),
+        radial-gradient(circle at 93% 88%, #ffd5e8 0 10%, transparent 10.3%),
+        linear-gradient(145deg, #fff8fb, var(--soft));
+      font-family: ui-rounded, "Avenir Next", system-ui, -apple-system, sans-serif;
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      z-index: -1;
+      font-size: clamp(2rem, 10vw, 4.5rem);
+      opacity: .28;
+      pointer-events: none;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    body::before { content: "♡"; top: 9vh; left: 4vw; }
+    body::after { content: "♥"; right: 5vw; bottom: 9vh; animation-delay: -2s; }
+
+    main {
+      width: min(100% - 28px, 470px);
+      margin: auto;
+      padding: 28px 0 34px;
+    }
+
+    .hero { text-align: center; }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 7px 14px;
+      border: 1px solid #ffc2dc;
+      border-radius: 999px;
+      color: var(--deep-pink);
+      background: #fff;
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .heart-connection {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 38px;
+      margin: 0 auto 3px;
+      color: var(--pink);
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .heart-connection i {
+      display: block;
+      width: 72px;
+      height: 7px;
+      border: 2px solid #f78fba;
+      border-right: 0;
+      border-left: 0;
+      border-radius: 999px;
+      background: #ffc2dc;
+      transform: rotate(-2deg);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--deep-pink);
+      font-size: clamp(2.65rem, 13vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: -.06em;
+    }
+
+    .subtitle {
+      margin: 14px auto 22px;
+      max-width: 340px;
+      font-size: 1.04rem;
+      line-height: 1.45;
+    }
+
+    .date-card,
+    .plan-card,
+    .question-card {
+      border: 2px solid #ffc2dc;
+      border-radius: 28px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .date-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin-bottom: 16px;
+      padding: 17px 18px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff7eb8, #e95b99);
+      border-color: transparent;
+      box-shadow: 0 13px 26px rgba(233, 91, 153, .3);
+    }
+
+    .date-icon { font-size: 1.75rem; }
+    .date-card strong { display: block; font-size: 1.16rem; }
+    .date-card span { font-size: .9rem; opacity: .92; }
+
+    .outfit-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding: 15px 18px;
+      border: 2px solid #ffc2dc;
+      border-radius: 24px;
+      background: #fff8fc;
+      box-shadow: 0 10px 24px rgba(214, 75, 132, .11);
+    }
+
+    .outfit-icon { font-size: 1.8rem; }
+    .outfit-card strong { display: block; font-size: .96rem; }
+    .outfit-card span { display: block; margin-top: 3px; color: #8b526b; font-size: .82rem; }
+
+    .plan-card { padding: 20px; }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .stop {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 13px 0;
+    }
+
+    .stop + .stop { border-top: 1px dashed #f1a9c8; }
+
+    .stop-icon {
+      display: grid;
+      flex: 0 0 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 15px;
+      background: #ffe1ee;
+      font-size: 1.35rem;
+    }
+
+    .stop h2 { margin: 1px 0 3px; font-size: 1rem; }
+    .stop p { margin: 0 0 8px; color: #8b526b; font-size: .86rem; line-height: 1.35; }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--deep-pink);
+      background: #fff;
+      font-size: .78rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(217, 79, 141, .1);
+    }
+
+    .question-card {
+      position: relative;
+      min-height: 255px;
+      margin-top: 16px;
+      padding: 24px 18px 20px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .question-card::before { content: "✦  ♡  ✦"; display: block; margin-bottom: 10px; color: #f39ac0; letter-spacing: 8px; }
+    .question-card h2 { margin: 0 auto 8px; font-size: 1.45rem; line-height: 1.15; }
+    .question-card p { margin: 0 auto 18px; color: #8b526b; font-size: .9rem; }
+
+    .actions {
+      position: relative;
+      display: flex;
+      min-height: 106px;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: transform .35s ease, box-shadow .35s ease, background .2s ease;
+    }
+
+    #yes {
+      z-index: 2;
+      min-width: 112px;
+      padding: 14px 23px;
+      color: #fff;
+      background: linear-gradient(135deg, #ff70af, #df4f90);
+      box-shadow: 0 8px 16px rgba(223, 79, 144, .27);
+    }
+
+    #no {
+      z-index: 3;
+      min-width: 89px;
+      padding: 12px 18px;
+      color: var(--deep-pink);
+      background: #fff;
+      box-shadow: 0 5px 13px rgba(92, 41, 68, .1);
+    }
+
+    #no.is-moving { position: absolute; }
+
+    .hint { margin-top: 14px !important; font-size: .74rem !important; opacity: .74; }
+
+    .success {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: 25px;
+      color: #fff;
+      background: linear-gradient(145deg, rgba(255, 111, 174, .96), rgba(211, 68, 129, .98));
+      text-align: center;
+      animation: appear .45s ease both;
+    }
+
+    .success[hidden] { display: none; }
+    .success-box { max-width: 360px; }
+    .success-heart { font-size: 4.5rem; animation: beat 1s ease-in-out infinite; }
+    .success h2 { margin: 8px 0; font-size: 2.5rem; letter-spacing: -.05em; }
+    .success p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
+    .love-note { margin-top: 18px !important; font-size: 1.35rem !important; font-weight: 900; }
+
+    @keyframes float { 50% { transform: translateY(-13px) rotate(8deg); } }
+    @keyframes beat { 50% { transform: scale(1.12); } }
+    @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="eyebrow">invito speciale per</div>
+      <div class="heart-connection" aria-hidden="true"><span>♥</span><i></i><span>♥</span></div>
+      <h1>Angelica 💗</h1>
+      <p class="subtitle">Ho organizzato un piccolo date tutto per noi… ti va di venire con me?</p>
+    </header>
+
+    <section class="date-card" aria-label="Data dell'appuntamento">
+      <div class="date-icon">🗓️</div>
+      <div><strong>Sabato 29 agosto · ore 16:00</strong><span>così hai tutto il tempo per prepararti ✨</span></div>
+    </section>
+
+    <section class="outfit-card" aria-label="Outfit consigliato">
+      <div class="outfit-icon">🎀</div>
+      <div><strong>Outfit: cute e carino ♡</strong><span>Rosa pastello e Jordan rosa, per essere kawai insieme 💗</span></div>
+    </section>
+
+    <section class="plan-card" aria-label="Programma del date">
+      <h2 class="section-title">Il nostro mini itinerario ♡</h2>
+      <div class="stop">
+        <div class="stop-icon">🍵</div>
+        <div>
+          <h2>Prima: matcha al McDonald’s Drive-in</h2>
+          <p>Una dolce sosta per iniziare la passeggiata con la nostra bevanda preferita.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=McDonald%27s+Drive-in+Casier+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
+        </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon">🌿</div>
+        <div>
+          <h2>Poi: passeggiata al Cimitero dei Burci</h2>
+          <p>Casier, Treviso — acqua, natura e un po’ di tempo solo per noi.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cimitero+dei+Burci%2C+Casier%2C+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="question-card" aria-label="Risposta all'invito">
+      <h2>Allora… vieni al date con me?</h2>
+      <p id="message">Prometto una passeggiata carina e tante coccole.</p>
+      <div class="actions">
+        <button id="yes" type="button">Sì, certo! 💞</button>
+        <button id="no" type="button">No 🙈</button>
+      </div>
+      <p class="hint">P.S. il cuore spera tanto in un sì ♡</p>
+    </section>
+  </main>
+
+  <div class="success" id="success" hidden>
+    <div class="success-box">
+      <div class="success-heart">💖</div>
+      <h2>Yay, sapevo di sì!</h2>
+      <p>Allora è ufficiale: 29 agosto alle 16.<br>Non vedo l’ora di stare con te, Angelica ✨</p>
+      <p class="love-note">ti voglio bene cacca 💗</p>
+    </div>
+  </div>
+
+  <script>
+    const yes = document.querySelector('#yes');
+    const no = document.querySelector('#no');
+    const actions = document.querySelector('.actions');
+    const message = document.querySelector('#message');
+    const success = document.querySelector('#success');
+    let noCount = 0;
+
+    const messages = [
+      'Sicura sicura? 🥺',
+      'Posso offrire io il matcha… 🍵',
+      'Il Cimitero dei Burci ci aspetta 🌿',
+      'Un ultimo pensierino? 💗',
+      'Il sì sta diventando grandissimo ✨'
+    ];
+
+    no.addEventListener('click', () => {
+      noCount += 1;
+      const growth = Math.min(1 + noCount * .22, 3.2);
+      yes.style.transform = `scale(${growth})`;
+      yes.style.boxShadow = `0 10px ${16 + noCount * 4}px rgba(223, 79, 144, .32)`;
+      message.textContent = messages[Math.min(noCount - 1, messages.length - 1)];
+
+      no.classList.add('is-moving');
+      const maxX = Math.max(8, actions.clientWidth - no.offsetWidth - 8);
+      const maxY = Math.max(8, actions.clientHeight - no.offsetHeight - 8);
+      no.style.left = `${8 + Math.random() * (maxX - 8)}px`;
+      no.style.top = `${8 + Math.random() * (maxY - 8)}px`;
+
+      if (noCount >= 8) {
+        yes.style.position = 'fixed';
+        yes.style.inset = '0';
+        yes.style.width = '100vw';
+        yes.style.height = '100svh';
+        yes.style.borderRadius = '0';
+        yes.style.transform = 'none';
+        yes.textContent = 'SÌ 💖';
+      }
+    });
+
+    yes.addEventListener('click', () => {
+      success.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  </script>
+</body>
+</html>
