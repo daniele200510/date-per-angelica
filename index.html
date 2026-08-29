@@ -36,11 +36,11 @@
       font-size: clamp(2rem, 10vw, 4.5rem);
       opacity: .28;
       pointer-events: none;
-      animation: float-spin 5s ease-in-out infinite;
+      animation: float 5s ease-in-out infinite;
     }
 
-    body::before { content: "💗"; top: 9vh; left: 4vw; }
-    body::after { content: "💗"; right: 5vw; bottom: 9vh; animation-delay: -2s; }
+    body::before { content: "💞"; top: 9vh; left: 4vw; }
+    body::after { content: "💞"; right: 5vw; bottom: 9vh; animation-delay: -2s; }
 
     main {
       width: min(100% - 28px, 470px);
@@ -75,14 +75,6 @@
       font-size: 1.45rem;
       line-height: 1;
     }
-
-    .heart-connection span,
-    .spin-heart {
-      display: inline-block;
-      animation: heart-spin 2.4s linear infinite;
-    }
-
-    .heart-connection span:last-child { animation-delay: -1.2s; }
 
     .heart-connection i {
       display: block;
@@ -267,13 +259,12 @@
 
     .success[hidden] { display: none; }
     .success-box { max-width: 360px; }
-    .success-heart { font-size: 4.5rem; animation: beat 1s ease-in-out infinite, heart-spin 2.4s linear infinite; }
+    .success-heart { font-size: 4.5rem; animation: beat 1s ease-in-out infinite; }
     .success h2 { margin: 8px 0; font-size: 2.5rem; letter-spacing: -.05em; }
     .success p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
     .love-note { margin-top: 18px !important; font-size: 1.35rem !important; font-weight: 900; }
 
-    @keyframes float-spin { 50% { transform: translateY(-13px) rotate(180deg); } }
-    @keyframes heart-spin { to { transform: rotate(360deg); } }
+    @keyframes float { 50% { transform: translateY(-13px) rotate(8deg); } }
     @keyframes beat { 50% { transform: scale(1.12); } }
     @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
 
@@ -286,8 +277,8 @@
   <main>
     <header class="hero">
       <div class="eyebrow">invito speciale per</div>
-      <div class="heart-connection" aria-hidden="true"><span>♥</span><i></i><span>♥</span></div>
-      <h1>Angelica <span class="spin-heart" aria-hidden="true">💗</span></h1>
+      <div class="heart-connection" aria-hidden="true"><span>💞</span><i></i><span>💞</span></div>
+      <h1>Angelica <span aria-hidden="true">💞</span></h1>
       <p class="subtitle">Ho organizzato un piccolo date tutto per noi… ti va di venire con me?</p>
     </header>
 
@@ -298,11 +289,11 @@
 
     <section class="outfit-card" aria-label="Outfit consigliato">
       <div class="outfit-icon">🎀</div>
-      <div><strong>Outfit: cute e carino <span class="spin-heart" aria-hidden="true">💗</span></strong><span>Rosa pastello e Jordan rosa <span class="spin-heart" aria-hidden="true">💗</span></span></div>
+      <div><strong>Outfit: cute e carino <span aria-hidden="true">💞</span></strong><span>Rosa pastello e Jordan rosa <span aria-hidden="true">💞</span></span></div>
     </section>
 
     <section class="plan-card" aria-label="Programma del date">
-      <h2 class="section-title">Il nostro mini itinerario <span class="spin-heart" aria-hidden="true">💗</span></h2>
+      <h2 class="section-title">Il nostro mini itinerario <span aria-hidden="true">💞</span></h2>
       <div class="stop">
         <div class="stop-icon">🍵</div>
         <div>
@@ -325,19 +316,19 @@
       <h2>Allora… vieni al date con me?</h2>
       <p id="message">Prometto una passeggiata carina e tante coccole.</p>
       <div class="actions">
-        <button id="yes" type="button">Sì, certo! <span class="spin-heart" aria-hidden="true">💞</span></button>
+        <button id="yes" type="button">Sì, certo! <span aria-hidden="true">💞</span></button>
         <button id="no" type="button">No 🙈</button>
       </div>
-      <p class="hint">P.S. il cuore spera tanto in un sì <span class="spin-heart" aria-hidden="true">💗</span></p>
+      <p class="hint">P.S. il cuore spera tanto in un sì <span aria-hidden="true">💞</span></p>
     </section>
   </main>
 
   <div class="success" id="success" hidden>
     <div class="success-box">
-      <div class="success-heart">💖</div>
+      <div class="success-heart">💞</div>
       <h2>Yay, sapevo di sì!</h2>
       <p>Allora è ufficiale: 29 agosto alle 16.<br>Non vedo l’ora di stare con te, Angelica ✨</p>
-      <p class="love-note">ti voglio bene cacca <span class="spin-heart" aria-hidden="true">💗</span></p>
+      <p class="love-note">ti voglio bene cacca <span aria-hidden="true">💞</span></p>
     </div>
   </div>
 
@@ -377,7 +368,7 @@
         yes.style.height = '100svh';
         yes.style.borderRadius = '0';
         yes.style.transform = 'none';
-        yes.innerHTML = 'SÌ <span class="spin-heart" aria-hidden="true">💖</span>';
+        yes.innerHTML = 'SÌ <span aria-hidden="true">💞</span>';
       }
     });
 
