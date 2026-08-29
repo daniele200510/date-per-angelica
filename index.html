@@ -16,11 +16,13 @@
     }
 
     * { box-sizing: border-box; }
+    html { overflow-x: hidden; }
 
     body {
       margin: 0;
       min-height: 100svh;
       overflow-x: hidden;
+      overscroll-behavior-x: none;
       color: var(--ink);
       background:
         radial-gradient(circle at 10% 8%, #ffd5e8 0 7%, transparent 7.3%),
@@ -206,10 +208,14 @@
     .actions {
       position: relative;
       display: flex;
+      height: 106px;
       min-height: 106px;
       align-items: center;
       justify-content: center;
       gap: 12px;
+      overflow: hidden;
+      touch-action: manipulation;
+      overscroll-behavior: contain;
     }
 
     button {
@@ -306,7 +312,7 @@
         <div class="stop-icon">🌿</div>
         <div>
           <h2>Poi: passeggiata al Cimitero dei Burci</h2>
-          <p>Casier, Treviso — acqua, natura e un po’ di tempo solo per noi.</p>
+          <p>Casier, Treviso — tartarughe e barche distrutte sull’acqua, come in un quadro 🐢🛶</p>
           <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cimitero+dei+Burci%2C+Casier%2C+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
         </div>
       </div>
@@ -360,6 +366,11 @@
       const maxY = Math.max(8, actions.clientHeight - no.offsetHeight - 8);
       no.style.left = `${8 + Math.random() * (maxX - 8)}px`;
       no.style.top = `${8 + Math.random() * (maxY - 8)}px`;
+
+      if (noCount >= 4) {
+        yes.style.zIndex = '4';
+        no.style.zIndex = '1';
+      }
 
       if (noCount >= 8) {
         yes.style.position = 'fixed';
