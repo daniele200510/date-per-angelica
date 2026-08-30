@@ -260,6 +260,104 @@
     .success p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
     .love-note { margin-top: 18px !important; font-size: 1.35rem !important; font-weight: 900; }
 
+    /* Override visivo: foresta, roccia, acqua e luce spirituale. */
+    :root {
+      --deep-pink: #bd547e;
+      --ink: #183c2e;
+      --soft: #e8f5e8;
+      --card: rgba(239, 255, 240, .88);
+      --shadow: 0 20px 55px rgba(3, 28, 19, .28);
+    }
+
+    html { background: #071b15; }
+    body {
+      background: #071b15;
+      isolation: isolate;
+    }
+
+    body::before,
+    body::after {
+      position: fixed;
+      inset: -18px;
+      z-index: -2;
+      content: "";
+      pointer-events: none;
+    }
+
+    body::before {
+      opacity: 1;
+      animation: none;
+      background:
+        linear-gradient(180deg, rgba(5, 31, 21, .5), rgba(7, 27, 21, .9)),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1400&q=88") center / cover;
+      filter: blur(3px) saturate(.9);
+      transform: scale(1.04);
+    }
+
+    body::after {
+      animation: none;
+      z-index: -1;
+      background:
+        linear-gradient(145deg, rgba(10, 52, 35, .42), rgba(5, 24, 17, .78)),
+        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=82") left bottom / 52% 43% no-repeat,
+        url("https://images.unsplash.com/photo-1528459105426-b9548367069b?auto=format&fit=crop&w=900&q=82") right bottom / 48% 38% no-repeat;
+      opacity: .76;
+      mix-blend-mode: screen;
+    }
+
+    .hero { color: #edffef; }
+    .eyebrow {
+      border-color: rgba(201, 246, 204, .46);
+      color: #d7f8d9;
+      background: rgba(20, 74, 49, .68);
+    }
+    h1 {
+      color: #e7ffe7;
+      font-family: Georgia, serif;
+      text-shadow: 0 7px 22px rgba(0, 0, 0, .28);
+    }
+    .subtitle { color: #d8f2db; }
+    .date-card {
+      color: #f2fff2;
+      background: linear-gradient(135deg, rgba(42, 113, 75, .94), rgba(13, 57, 39, .95));
+      border-color: rgba(193, 239, 190, .35);
+    }
+    .date-card span { color: #c9edce; }
+    .date-card, .plan-card, .question-card { border-color: rgba(160, 218, 174, .72); }
+    .section-title, .stop h2, .question-card h2 { color: #286044; }
+    .stop + .stop, .detail + .detail { border-color: #a5d6ad; }
+    .stop-icon { border-color: #b7e2bd; background: #e2f7e3; }
+    .stop p, .detail p, .question-card p { color: #547562; }
+    .map-link { color: #fff; background: #286044; }
+    .question-card::before { content: "☽  ✦  🌿  ✦  ☾"; color: #7aa887; }
+    #yes { background: linear-gradient(135deg, #f18baa, #ba547d); }
+    #no { color: #286044; }
+    .hint { color: #789382 !important; }
+    .success {
+      color: #edffef;
+      background: linear-gradient(145deg, rgba(14, 79, 48, .97), rgba(4, 31, 21, .99)), url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85") center / cover;
+    }
+    .success h2 { font-family: Georgia, serif; }
+    .love-note { color: #f5a8c2; }
+    .details-card {
+      display: grid;
+      gap: 0;
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid rgba(160, 218, 174, .72);
+      border-radius: 26px;
+      background: rgba(239, 255, 240, .88);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(13px);
+    }
+    .detail { padding: 11px 0; }
+    .detail:first-child { padding-top: 0; }
+    .detail:last-child { padding-bottom: 0; }
+    .detail + .detail { border-top: 1px dashed #a5d6ad; }
+    .detail h2 { margin: 0 0 5px; color: #286044; font-size: .98rem; }
+    .detail p { margin: 0; color: #547562; font-size: .85rem; line-height: 1.42; }
+    .optional { color: #bd547e; font-weight: 900; }
+
     @keyframes float { 50% { transform: translateY(-13px) rotate(8deg); } }
     @keyframes beat { 50% { transform: scale(1.12); } }
     @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
@@ -272,52 +370,74 @@
 <body>
   <main>
     <header class="hero">
-      <div class="eyebrow">bowling date per</div>
+      <div class="eyebrow">☾ nature date · 29 agosto</div>
       <div class="heart-connection" aria-hidden="true"><span>💞</span><i></i><span>💞</span></div>
-      <h1>Angelica <span aria-hidden="true">💞</span></h1>
-      <p class="subtitle">Ho organizzato una serata carina tutta per noi… ti va di venire?</p>
+      <h1>Grotte del<br>Caglieron <span aria-hidden="true">💞</span></h1>
+      <p class="subtitle">Una fuga nel verde, tra grotte, acqua e natura. Un piccolo viaggio spirituale tutto per noi.</p>
     </header>
 
     <section class="date-card" aria-label="Data dell'appuntamento">
-      <div class="date-icon">🎳</div>
-      <div><strong>Sabato 29 agosto · dalle 18:30</strong><span>ritiro, cena insieme, bowling e cuori 💞</span></div>
+      <div class="date-icon">🌿</div>
+      <div><strong>Sabato 29 agosto · ore 15:00</strong><span>3:00 PM · si parte insieme ✨</span></div>
     </section>
 
-    <section class="plan-card" aria-label="Programma della serata">
-      <h2 class="section-title">Il nostro programma <span aria-hidden="true">🎳</span> <span aria-hidden="true">💞</span></h2>
+    <section class="plan-card" aria-label="Programma della giornata">
+      <h2 class="section-title">Il nostro piccolo rituale <span aria-hidden="true">💞</span></h2>
       <div class="stop">
         <div class="stop-icon">🚗</div>
         <div>
-          <h2>Ore 18:30 · Ti vengo a prendere</h2>
-          <p>Alle 19:00 andiamo a casa mia e ceniamo insieme, con calma e tante coccole.</p>
+          <h2>Ore 15:00 · Partiamo</h2>
+          <p>Ti vengo a prendere e ci immergiamo nella natura delle Grotte del Caglieron.</p>
         </div>
       </div>
       <div class="stop">
-        <div class="stop-icon">🎳</div>
+        <div class="stop-icon">🪨</div>
         <div>
-          <h2>Ore 20:00 · Sala giochi a Lancenigo</h2>
-          <p>Andiamo a giocare a bowling a Treviso Lancenigo: strike, risate e cuori 💞</p>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bowling+Treviso+Lancenigo" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
+          <h2>Grotte del Caglieron · Treviso</h2>
+          <p>Acqua, roccia, vegetazione e silenzio: sembra un piccolo mondo incantato.</p>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Grotte+del+Caglieron%2C+Fregona%2C+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
         </div>
+      </div>
+      <div class="stop">
+        <div class="stop-icon">🍵</div>
+        <div>
+          <h2>Al ritorno · opzionale</h2>
+          <p>Passiamo al McDrive e prendiamo il matcha insieme.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details-card" aria-label="Occorrente e outfit">
+      <div class="detail">
+        <h2>Occorrente 💧</h2>
+        <p>Porta una borraccia con acqua fredda.</p>
+      </div>
+      <div class="detail">
+        <h2><span class="optional">Opzionale:</span> cappellino 🧢</h2>
+        <p>Perché farà tanto caldo e non voglio che si bruci la tua testolina.</p>
+      </div>
+      <div class="detail">
+        <h2>Outfit · tema verdino chiaro 🌱</h2>
+        <p>Vestiti molto leggera: comoda, fresca e bellissima nel verde.</p>
       </div>
     </section>
 
     <section class="question-card" aria-label="Risposta all'invito">
-      <h2>Allora… vieni a giocare con me?</h2>
-      <p id="message">Prometto cena insieme, bowling e tante coccole.</p>
+      <h2>Vieni con me alle grotte?</h2>
+      <p id="message">Prometto natura, avventura e tante coccole.</p>
       <div class="actions">
-        <button id="yes" type="button">Sì, certo! <span aria-hidden="true">💞</span></button>
+        <button id="yes" type="button">Sì, vengo! <span aria-hidden="true">💞</span></button>
         <button id="no" type="button">No 🙈</button>
       </div>
-      <p class="hint">P.S. il cuore spera tanto in un sì <span aria-hidden="true">💞</span></p>
+      <p class="hint">P.S. il bosco fa il tifo per noi ♡</p>
     </section>
   </main>
 
   <div class="success" id="success" hidden>
     <div class="success-box">
       <div class="success-heart">💞</div>
-      <h2>Yay, sapevo di sì!</h2>
-      <p>Allora è ufficiale: alle 18:30 ti vengo a prendere.<br>Alle 19 ceniamo insieme e alle 20 si va a bowling 🎳</p>
+      <h2>Ci avventuriamo!</h2>
+      <p>Alle 15:00 si parte per le Grotte del Caglieron.<br>Non vedo l’ora di vivere questa giornata con te, Angelica ✨</p>
       <p class="love-note">ti voglio bene cacca <span aria-hidden="true">💞</span></p>
     </div>
   </div>
@@ -332,8 +452,8 @@
 
     const messages = [
       'Sicura sicura? 🥺',
-      'Alle 18:30 ti vengo a prendere io 🚗',
-      'Ceniamo insieme a casa mia 🍝',
+      'Borraccia pronta? 💧',
+      'Il verde fa il tifo per noi 🌿',
       'Un ultimo pensierino? ✨',
       'Il sì sta diventando grandissimo ✨'
     ];
