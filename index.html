@@ -3,461 +3,120 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#fff1f7">
-  <title>Grotte del Caglieron · Angelica 💞</title>
+  <meta name="theme-color" content="#23332d">
+  <title>Angelica · una giornata fuori</title>
   <style>
     :root {
-      --pink: #ff6fae;
-      --deep-pink: #a452c5;
-      --ink: #432c5d;
-      --soft: #f4efff;
-      --card: rgba(255, 255, 255, .8);
-      --shadow: 0 18px 45px rgba(214, 75, 132, .18);
+      --ink: #23332d;
+      --forest: #344c3d;
+      --paper: #f5efe5;
+      --cream: #fbf8f1;
+      --clay: #c96f52;
+      --line: rgba(35, 51, 45, .18);
+      --shadow: 0 24px 70px rgba(25, 42, 34, .18);
     }
-
     * { box-sizing: border-box; }
-    html {
-      min-height: 100%;
-      height: auto;
-      overflow-x: hidden;
-      background: var(--soft);
-    }
-
+    html { background: var(--ink); }
     body {
-      position: relative;
       margin: 0;
-      min-height: 0;
-      height: auto;
-      overflow-x: hidden;
-      overscroll-behavior-x: none;
+      min-height: 100vh;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 10% 8%, #ffd5e8 0 7%, transparent 7.3%),
-        radial-gradient(circle at 93% 88%, #e6d8ff 0 10%, transparent 10.3%),
-        linear-gradient(145deg, #fff8fb, var(--soft));
-      font-family: ui-rounded, "Avenir Next", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at 12% 5%, rgba(201, 111, 82, .2), transparent 25rem), linear-gradient(135deg, #304538 0%, #23332d 58%, #1d2a25 100%);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
-
-    body::before,
-    body::after {
-      position: fixed;
-      z-index: -1;
-      font-size: clamp(2rem, 10vw, 4.5rem);
-      opacity: .28;
-      pointer-events: none;
-      animation: float 5s ease-in-out infinite;
-    }
-
-    body::before { content: "🎳"; top: 9vh; left: 4vw; }
-    body::after { content: "💞"; right: 5vw; bottom: 9vh; animation-delay: -2s; }
-
-    main {
-      position: relative;
-      z-index: 1;
-      width: min(100% - 28px, 470px);
-      margin: auto;
-      padding: 28px 0 0;
-    }
-
-    .hero { text-align: center; }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 8px;
-      padding: 7px 14px;
-      border: 1px solid #ffc2dc;
-      border-radius: 999px;
-      color: var(--deep-pink);
-      background: #fff;
-      font-size: .76rem;
-      font-weight: 800;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-    }
-
-    .heart-connection {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      height: 38px;
-      margin: 0 auto 3px;
-      color: var(--pink);
-      font-size: 1.45rem;
-      line-height: 1;
-    }
-
-    .heart-connection i {
-      display: block;
-      width: 72px;
-      height: 7px;
-      border: 2px solid #f78fba;
-      border-right: 0;
-      border-left: 0;
-      border-radius: 999px;
-      background: #ffc2dc;
-      transform: rotate(-2deg);
-    }
-
-    h1 {
-      margin: 0;
-      color: var(--deep-pink);
-      font-size: clamp(2.65rem, 13vw, 4.2rem);
-      line-height: .98;
-      letter-spacing: -.06em;
-    }
-
-    .subtitle {
-      margin: 14px auto 22px;
-      max-width: 340px;
-      font-size: 1.04rem;
-      line-height: 1.45;
-    }
-
-    .date-card,
-    .plan-card,
-    .question-card {
-      border: 2px solid #ffc2dc;
-      border-radius: 28px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .date-card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 13px;
-      margin-bottom: 16px;
-      padding: 17px 18px;
-      color: #fff;
-      background: linear-gradient(135deg, #ff7eb8, #e95b99);
-      border-color: transparent;
-      box-shadow: 0 13px 26px rgba(233, 91, 153, .3);
-    }
-
-    .date-icon { font-size: 1.75rem; }
-    .date-card strong { display: block; font-size: 1.16rem; }
-    .date-card span { font-size: .9rem; opacity: .92; }
-
-    .plan-card { padding: 20px; }
-
-    .section-title {
-      margin: 0 0 12px;
-      font-size: 1rem;
-      font-weight: 900;
-    }
-
-    .stop {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      padding: 13px 0;
-    }
-
-    .stop + .stop { border-top: 1px dashed #f1a9c8; }
-
-    .stop-icon {
-      display: grid;
-      flex: 0 0 42px;
-      height: 42px;
-      place-items: center;
-      border-radius: 15px;
-      background: #eadcff;
-      font-size: 1.35rem;
-    }
-
-    .stop h2 { margin: 1px 0 3px; font-size: 1rem; }
-    .stop p { margin: 0 0 8px; color: #8b526b; font-size: .86rem; line-height: 1.35; }
-
-    .map-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: var(--deep-pink);
-      background: #fff;
-      font-size: .78rem;
-      font-weight: 800;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(217, 79, 141, .1);
-    }
-
-    .question-card {
-      position: relative;
-      margin-top: 16px;
-      padding: 24px 18px 20px;
-      overflow: hidden;
-      text-align: center;
-      margin-bottom: 0;
-    }
-
-    .question-card::before { content: "✦  ✦"; display: block; margin-bottom: 10px; color: #f39ac0; letter-spacing: 8px; }
-    .question-card h2 { margin: 0 auto 8px; font-size: 1.45rem; line-height: 1.15; }
-    .question-card p { margin: 0 auto 18px; color: #8b526b; font-size: .9rem; }
-
-    .actions {
-      position: relative;
-      display: flex;
-      height: 106px;
-      min-height: 106px;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      overflow: hidden;
-      touch-action: manipulation;
-      overscroll-behavior: contain;
-    }
-
-    button {
-      border: 0;
-      border-radius: 999px;
-      font: inherit;
-      font-weight: 900;
-      cursor: pointer;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform .35s ease, box-shadow .35s ease, background .2s ease;
-    }
-
-    #yes {
-      z-index: 2;
-      min-width: 112px;
-      padding: 14px 23px;
-      color: #fff;
-      background: linear-gradient(135deg, #ff70af, #df4f90);
-      box-shadow: 0 8px 16px rgba(223, 79, 144, .27);
-    }
-
-    #no {
-      z-index: 3;
-      min-width: 89px;
-      padding: 12px 18px;
-      color: var(--deep-pink);
-      background: #fff;
-      box-shadow: 0 5px 13px rgba(92, 41, 68, .1);
-    }
-
+    body::after { position: fixed; inset: auto 1.8rem 1.4rem auto; content: "31 / 08"; color: rgba(245, 239, 229, .25); font: 700 .7rem/1 Georgia, serif; letter-spacing: .22em; transform: rotate(-90deg) translateX(100%); transform-origin: right bottom; pointer-events: none; }
+    .page { width: min(100% - 32px, 1080px); margin: 0 auto; padding: 42px 0 28px; }
+    .topline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; color: rgba(245, 239, 229, .7); font-size: .7rem; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; }
+    .topline span:last-child { color: #e7b39e; }
+    .invitation { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); min-height: 670px; overflow: hidden; border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); }
+    .visual { position: relative; min-height: 670px; padding: 24px; isolation: isolate; background: linear-gradient(180deg, rgba(16, 32, 25, .08), rgba(16, 32, 25, .72)), url("https://commons.wikimedia.org/wiki/Special:FilePath/Grotte%20del%20Caglieron.jpg?width=1600") center / cover; }
+    .visual::before { position: absolute; inset: 14px; z-index: -1; border: 1px solid rgba(255, 248, 238, .38); border-radius: 18px; content: ""; }
+    .visual-top, .visual-bottom { position: absolute; right: 38px; left: 38px; display: flex; justify-content: space-between; }
+    .visual-top { top: 34px; align-items: center; }
+    .visual-bottom { bottom: 36px; align-items: flex-end; }
+    .stamp { display: grid; width: 74px; height: 74px; place-items: center; border: 1px solid rgba(255, 248, 238, .65); border-radius: 50%; color: #fff8ee; font: 700 .62rem/1.2 Georgia, serif; letter-spacing: .12em; text-align: center; transform: rotate(11deg); }
+    .number { color: rgba(255, 248, 238, .75); font: 700 .7rem/1 Georgia, serif; letter-spacing: .12em; }
+    .photo-caption { max-width: 240px; color: #fff8ee; font: italic 1.25rem/1.12 Georgia, serif; }
+    .photo-caption small { display: block; margin-top: 10px; color: rgba(255, 248, 238, .72); font: 700 .62rem/1.3 ui-sans-serif, system-ui, sans-serif; letter-spacing: .14em; text-transform: uppercase; }
+    .content { display: flex; flex-direction: column; padding: 46px 48px 30px; }
+    .kicker { margin: 0 0 16px; color: var(--clay); font-size: .72rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; }
+    h1 { max-width: 460px; margin: 0; color: var(--forest); font: 400 clamp(3rem, 6vw, 5.8rem)/.88 Georgia, serif; letter-spacing: -.07em; }
+    .lead { max-width: 380px; margin: 22px 0 32px; color: #56665a; font: italic 1.12rem/1.45 Georgia, serif; }
+    .date { display: flex; align-items: center; gap: 14px; margin-bottom: 26px; padding: 13px 0 16px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .date-day { color: var(--clay); font: 400 2.4rem/.8 Georgia, serif; }
+    .date-copy { font-size: .79rem; line-height: 1.45; }
+    .date-copy strong { display: block; color: var(--forest); font-size: .84rem; }
+    .route { display: grid; gap: 0; margin-bottom: 26px; }
+    .route-item { position: relative; display: grid; grid-template-columns: 28px 1fr; gap: 12px; padding-bottom: 20px; }
+    .route-item:last-child { padding-bottom: 0; }
+    .route-item:not(:last-child)::after { position: absolute; top: 24px; bottom: 0; left: 13px; border-left: 1px dashed rgba(52, 76, 61, .35); content: ""; }
+    .route-icon { position: relative; z-index: 1; display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; color: var(--cream); background: var(--forest); font-size: .75rem; }
+    .route-item:last-child .route-icon { background: var(--clay); }
+    .route h2 { margin: 2px 0 4px; color: var(--forest); font: 700 .91rem/1.2 ui-sans-serif, system-ui, sans-serif; }
+    .route p { margin: 0; color: #657267; font-size: .83rem; line-height: 1.45; }
+    .map-link { display: inline-flex; margin-top: 8px; color: var(--clay); font-size: .76rem; font-weight: 900; text-underline-offset: 3px; }
+    .note { margin-top: auto; padding: 17px 18px; border-radius: 14px; color: #f9f3e9; background: var(--forest); }
+    .note strong { display: block; margin-bottom: 4px; font: 400 1.12rem/1.1 Georgia, serif; }
+    .note p { margin: 0; color: rgba(249, 243, 233, .75); font-size: .78rem; line-height: 1.45; }
+    .reply { margin-top: 20px; padding: 24px 0 0; border-top: 1px solid var(--line); }
+    .reply h2 { margin: 0 0 6px; color: var(--forest); font: 400 1.55rem/1.1 Georgia, serif; }
+    .reply p { margin: 0 0 16px; color: #68776b; font-size: .8rem; }
+    .actions { position: relative; display: flex; align-items: center; gap: 9px; min-height: 52px; overflow: hidden; touch-action: manipulation; }
+    button { border: 0; border-radius: 99px; font: inherit; font-weight: 900; cursor: pointer; transition: transform .3s ease, box-shadow .3s ease; }
+    #yes { padding: 12px 22px; color: #fff8ee; background: var(--clay); box-shadow: 0 8px 18px rgba(201, 111, 82, .25); }
+    #no { padding: 10px 16px; color: var(--forest); background: transparent; box-shadow: inset 0 0 0 1px rgba(52, 76, 61, .3); }
     #no.is-moving { position: absolute; }
-
-    .hint { margin-top: 14px !important; font-size: .74rem !important; opacity: .74; }
-
-    .success {
-      position: fixed;
-      inset: 0;
-      z-index: 10;
-      display: grid;
-      place-items: center;
-      padding: 25px;
-      color: #fff;
-      background: linear-gradient(145deg, rgba(255, 111, 174, .96), rgba(211, 68, 129, .98));
-      text-align: center;
-      animation: appear .45s ease both;
-    }
-
+    .credit { margin: 14px 0 0; color: rgba(245, 239, 229, .45); font-size: .65rem; text-align: right; }
+    .credit a { color: inherit; }
+    .success { position: fixed; inset: 0; z-index: 5; display: grid; place-items: center; padding: 24px; color: #fff8ee; background: rgba(31, 48, 40, .98); text-align: center; animation: appear .35s ease both; }
     .success[hidden] { display: none; }
-    .success-box { max-width: 360px; }
-    .success-heart { font-size: 4.5rem; animation: beat 1s ease-in-out infinite; }
-    .success h2 { margin: 8px 0; font-size: 2.5rem; letter-spacing: -.05em; }
-    .success p { margin: 0; font-size: 1.05rem; line-height: 1.5; }
-    .love-note { margin-top: 18px !important; font-size: 1.35rem !important; font-weight: 900; }
-
-    /* Override visivo: foresta, roccia, acqua e luce spirituale. */
-    :root {
-      --deep-pink: #bd547e;
-      --ink: #183c2e;
-      --soft: #e8f5e8;
-      --card: rgba(239, 255, 240, .88);
-      --shadow: 0 20px 55px rgba(3, 28, 19, .28);
-    }
-
-    html { background: #071b15; }
-    body {
-      background: #071b15;
-      isolation: isolate;
-    }
-
-    body::before,
-    body::after {
-      position: fixed;
-      inset: -18px;
-      z-index: 0;
-      content: "";
-      pointer-events: none;
-    }
-
-    body::before {
-      opacity: 1;
-      animation: none;
-      background:
-        linear-gradient(180deg, rgba(5, 31, 21, .5), rgba(7, 27, 21, .9)),
-        url("https://images.unsplash.com/photo-1607772990885-48f6e4e4be3b?auto=format&fit=crop&w=1400&q=92") center top / cover;
-      filter: blur(3px) saturate(.9);
-      transform: scale(1.04);
-    }
-
-    body::after {
-      animation: none;
-      z-index: 0;
-      background:
-        linear-gradient(145deg, rgba(10, 52, 35, .42), rgba(5, 24, 17, .78)),
-        url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=82") left bottom / 52% 43% no-repeat,
-        url("https://images.unsplash.com/photo-1607772990885-48f6e4e4be3b?auto=format&fit=crop&w=900&q=82") right bottom / 48% 38% no-repeat;
-      opacity: .76;
-      mix-blend-mode: screen;
-    }
-
-    .hero { color: #edffef; }
-    .eyebrow {
-      border-color: rgba(201, 246, 204, .46);
-      color: #d7f8d9;
-      background: rgba(20, 74, 49, .68);
-    }
-    h1 {
-      color: #e7ffe7;
-      font-family: Georgia, serif;
-      text-shadow: 0 7px 22px rgba(0, 0, 0, .28);
-    }
-    .subtitle { color: #d8f2db; }
-    .date-card {
-      color: #f2fff2;
-      background: linear-gradient(135deg, rgba(42, 113, 75, .94), rgba(13, 57, 39, .95));
-      border-color: rgba(193, 239, 190, .35);
-    }
-    .date-card span { color: #c9edce; }
-    .date-card, .plan-card, .question-card { border-color: rgba(160, 218, 174, .72); }
-    .section-title, .stop h2, .question-card h2 { color: #286044; }
-    .stop + .stop, .detail + .detail { border-color: #a5d6ad; }
-    .stop-icon { border-color: #b7e2bd; background: #e2f7e3; }
-    .stop p, .detail p, .question-card p { color: #547562; }
-    .map-link { color: #fff; background: #286044; }
-    .question-card::before { content: "☽  ✦  🌿  ✦  ☾"; color: #7aa887; }
-    #yes { background: linear-gradient(135deg, #f18baa, #ba547d); }
-    #no { color: #286044; }
-    .hint { color: #789382 !important; }
-    .success {
-      color: #edffef;
-      background: linear-gradient(145deg, rgba(14, 79, 48, .97), rgba(4, 31, 21, .99)), url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85") center / cover;
-    }
-    .success h2 { font-family: Georgia, serif; }
-    .love-note { color: #f5a8c2; }
-    .hero {
-      position: relative;
-      overflow: hidden;
-      margin: 0 0 18px;
-      padding: 22px 15px 24px;
-      border: 1px solid rgba(219, 255, 218, .55);
-      border-radius: 30px;
-      background:
-        linear-gradient(180deg, rgba(5, 31, 21, .42), rgba(7, 27, 18, .82)),
-        url("https://images.unsplash.com/photo-1607772990885-48f6e4e4be3b?auto=format&fit=crop&w=1200&q=92") center 78% / cover no-repeat;
-      box-shadow: 0 24px 62px rgba(0, 0, 0, .34);
-    }
-    .hero > * { position: relative; z-index: 1; }
-    .details-card {
-      display: grid;
-      gap: 0;
-      margin-top: 14px;
-      padding: 18px;
-      border: 1px solid rgba(160, 218, 174, .72);
-      border-radius: 26px;
-      background: rgba(239, 255, 240, .88);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(13px);
-    }
-    .detail { padding: 11px 0; }
-    .detail:first-child { padding-top: 0; }
-    .detail:last-child { padding-bottom: 0; }
-    .detail + .detail { border-top: 1px dashed #a5d6ad; }
-    .detail h2 { margin: 0 0 5px; color: #286044; font-size: .98rem; }
-    .detail p { margin: 0; color: #547562; font-size: .85rem; line-height: 1.42; }
-    .optional { color: #bd547e; font-weight: 900; }
-
-    @keyframes float { 50% { transform: translateY(-13px) rotate(8deg); } }
-    @keyframes beat { 50% { transform: scale(1.12); } }
+    .success-box { max-width: 420px; }
+    .success-mark { color: #e7b39e; font: 400 4.5rem/1 Georgia, serif; }
+    .success h2 { margin: 12px 0; font: 400 3rem/.95 Georgia, serif; letter-spacing: -.06em; }
+    .success p { color: rgba(255, 248, 238, .78); font: italic 1.1rem/1.45 Georgia, serif; }
+    .love-note { color: #e7b39e !important; font: 700 .78rem/1 ui-sans-serif, system-ui, sans-serif !important; letter-spacing: .16em; text-transform: uppercase; }
     @keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    @media (max-width: 760px) {
+      body::after { display: none; }
+      .page { width: min(100% - 20px, 560px); padding-top: 20px; }
+      .topline { margin: 0 4px 12px; font-size: .6rem; }
+      .invitation { display: block; border-radius: 20px; }
+      .visual { min-height: 430px; padding: 18px; }
+      .visual-top, .visual-bottom { right: 28px; left: 28px; }
+      .visual-top { top: 27px; }
+      .visual-bottom { bottom: 28px; }
+      .content { padding: 36px 24px 26px; }
+      h1 { font-size: clamp(3.6rem, 19vw, 5rem); }
+      .lead { margin-bottom: 26px; }
+      .credit { text-align: center; }
     }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
   </style>
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <div class="eyebrow">☾ nature date · 31 agosto</div>
-      <div class="heart-connection" aria-hidden="true"><span>💞</span><i></i><span>💞</span></div>
-      <h1>Grotte del<br>Caglieron <span aria-hidden="true">💞</span></h1>
-      <p class="subtitle">Una fuga nel verde, tra grotte, acqua e natura. Un piccolo viaggio spirituale tutto per noi.</p>
-    </header>
-
-    <section class="date-card" aria-label="Data dell'appuntamento">
-      <div class="date-icon">🌿</div>
-      <div><strong>Lunedì 31 agosto · ore 15:00</strong><span>3:00 PM · si parte insieme ✨</span></div>
-    </section>
-
-    <section class="plan-card" aria-label="Programma della giornata">
-      <h2 class="section-title">Il nostro piccolo rituale <span aria-hidden="true">💞</span></h2>
-      <div class="stop">
-        <div class="stop-icon">🛒</div>
-        <div>
-          <h2>Ore 15:00 · Prima il supermercato</h2>
-          <p>Ci fermiamo a comprare qualcosina di buono da portarci lì nello zaino che porto io, insieme all’acqua fresca.</p>
+  <main class="page">
+    <div class="topline"><span>Un invito per Angelica</span><span>fuori programma · 01</span></div>
+    <article class="invitation">
+      <section class="visual" aria-label="Le Grotte del Caglieron">
+        <div class="visual-top"><span class="number">FREGONA, TV<br>VENETO</span><span class="stamp">SLOW<br>DAY<br>♡</span></div>
+        <div class="visual-bottom"><div class="photo-caption">Dove l’acqua<br>si prende il suo tempo.<small>Grotte del Caglieron</small></div><span class="number">N. 31—08</span></div>
+      </section>
+      <section class="content">
+        <p class="kicker">Per te, Angelica</p>
+        <h1>Andiamo<br>alle grotte?</h1>
+        <p class="lead">Una piccola fuga tra roccia, acqua e verde. Poi torniamo a casa e costruiamo qualcosa insieme.</p>
+        <div class="date" aria-label="Data dell'appuntamento"><span class="date-day">31</span><div class="date-copy"><strong>Lunedì 31 agosto · ore 15:00</strong>Si parte insieme, senza fretta.</div></div>
+        <div class="route" aria-label="Programma della giornata">
+          <div class="route-item"><div class="route-icon">01</div><div><h2>Grotte del Caglieron</h2><p>Passerelle, cascate e una passeggiata fresca nel cuore della forra.</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Grotte+del+Caglieron%2C+Fregona%2C+Treviso" target="_blank" rel="noopener">Apri la mappa →</a></div></div>
+          <div class="route-item"><div class="route-icon">02</div><div><h2>Poi, casa nostra</h2><p>Ci mettiamo comodi e lavoriamo insieme sul sito. Merenda, idee e un po’ di tempo solo per noi.</p></div></div>
         </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon">🚗</div>
-        <div>
-          <h2>Poi · Partiamo per le Grotte</h2>
-          <p>Ti vengo a prendere e ci immergiamo nella natura, tra acqua, roccia, vegetazione e silenzio.</p>
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Grotte+del+Caglieron%2C+Fregona%2C+Treviso" target="_blank" rel="noopener">📍 Apri su Google Maps</a>
-        </div>
-      </div>
-      <div class="stop">
-        <div class="stop-icon">🍵</div>
-        <div>
-          <h2>Al ritorno · opzionale</h2>
-          <p>Passiamo al McDrive e prendiamo il matcha insieme.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="details-card" aria-label="Occorrente e outfit">
-      <div class="detail">
-        <h2>Zaino pronto 🎒</h2>
-        <p>Lo porto io: dentro ci mettiamo le cose buone e l’acqua fresca.</p>
-      </div>
-      <div class="detail">
-        <h2><span class="optional">Opzionale:</span> cappellino 🧢</h2>
-        <p>Perché farà tanto caldo e non voglio che si bruci la tua testolina.</p>
-      </div>
-      <div class="detail">
-        <h2>Outfit · tema verdino chiaro 🌱</h2>
-        <p>Vestiti molto leggera: comoda, fresca e bellissima nel verde.</p>
-      </div>
-    </section>
-
-    <section class="question-card" aria-label="Risposta all'invito">
-      <h2>Vieni con me alle grotte?</h2>
-      <p id="message">Prometto natura, avventura e tante coccole.</p>
-      <div class="actions">
-        <button id="yes" type="button">Sì, vengo! <span aria-hidden="true">💞</span></button>
-        <button id="no" type="button">No 🙈</button>
-      </div>
-      <p class="hint">P.S. il bosco fa il tifo per noi ♡</p>
-    </section>
+        <div class="note"><strong>Dress code: fresco & comodo</strong><p>Scarpe con cui camminare e qualcosa di leggero. Al resto penso io.</p></div>
+        <div class="reply"><h2>Ti va di venire?</h2><p id="message">Prometto una giornata semplice, bella e tutta nostra.</p><div class="actions"><button id="yes" type="button">Sì, vengo! ↗</button><button id="no" type="button">Ci penso</button></div></div>
+      </section>
+    </article>
+    <p class="credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Grotte_del_Caglieron.jpg" target="_blank" rel="noopener">MarWiki / Wikimedia Commons</a> · CC BY-SA 4.0</p>
   </main>
-
-  <div class="success" id="success" hidden>
-    <div class="success-box">
-      <div class="success-heart">💞</div>
-      <h2>Ci avventuriamo!</h2>
-      <p>Alle 15:00 si parte per le Grotte del Caglieron.<br>Non vedo l’ora di vivere questa giornata con te, Angelica ✨</p>
-      <p class="love-note">ti voglio bene cacca <span aria-hidden="true">💞</span></p>
-    </div>
-  </div>
-
+  <div class="success" id="success" hidden><div class="success-box"><div class="success-mark">↗</div><h2>Perfetto,<br>si parte.</h2><p>Alle 15:00 grotte, acqua e poi casa a lavorare insieme sul sito. Non vedo l’ora, Angelica.</p><p class="love-note">giornata prenotata ♡</p></div></div>
   <script>
     const yes = document.querySelector('#yes');
     const no = document.querySelector('#no');
@@ -465,50 +124,20 @@
     const message = document.querySelector('#message');
     const success = document.querySelector('#success');
     let noCount = 0;
-
-    const messages = [
-      'Sicura sicura? 🥺',
-      'Borraccia pronta? 💧',
-      'Il verde fa il tifo per noi 🌿',
-      'Un ultimo pensierino? ✨',
-      'Il sì sta diventando grandissimo ✨'
-    ];
-
+    const messages = ['Sicura? Le grotte ci aspettano ♡', 'Potremmo anche scoprire un sentiero nuovo.', 'Il sito lo facciamo dopo, promesso.', 'Ultimo pensiero: acqua, verde e noi.'];
     no.addEventListener('click', (event) => {
       event.preventDefault();
       no.blur();
       noCount += 1;
-      const growth = Math.min(1 + noCount * .22, 3.2);
-      yes.style.transform = `scale(${growth})`;
-      yes.style.boxShadow = `0 10px ${16 + noCount * 4}px rgba(223, 79, 144, .32)`;
       message.textContent = messages[Math.min(noCount - 1, messages.length - 1)];
-
+      yes.style.transform = `scale(${Math.min(1 + noCount * .16, 1.75)})`;
       no.classList.add('is-moving');
       const maxX = Math.max(8, actions.clientWidth - no.offsetWidth - 8);
       const maxY = Math.max(8, actions.clientHeight - no.offsetHeight - 8);
-      no.style.left = `${8 + Math.random() * (maxX - 8)}px`;
-      no.style.top = `${8 + Math.random() * (maxY - 8)}px`;
-
-      if (noCount >= 4) {
-        yes.style.zIndex = '4';
-        no.style.zIndex = '1';
-      }
-
-      if (noCount >= 8) {
-        yes.style.position = 'fixed';
-        yes.style.inset = '0';
-        yes.style.width = '100vw';
-        yes.style.height = '100svh';
-        yes.style.borderRadius = '0';
-        yes.style.transform = 'none';
-        yes.innerHTML = 'SÌ <span aria-hidden="true">💞</span>';
-      }
+      no.style.left = `${8 + Math.random() * Math.max(0, maxX - 8)}px`;
+      no.style.top = `${Math.random() * maxY}px`;
     });
-
-    yes.addEventListener('click', () => {
-      success.hidden = false;
-      document.body.style.overflow = 'hidden';
-    });
+    yes.addEventListener('click', () => { success.hidden = false; document.body.style.overflow = 'hidden'; });
   </script>
 </body>
 </html>
