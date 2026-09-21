@@ -57,22 +57,22 @@
       <section class="content">
         <p class="kicker">Per te, Angelica 🎃</p>
         <h1>Zucca &<br>pizza.</h1>
-        <p class="lead">Un piccolo appuntamento in due tempi: prima impastiamo una torta d’autunno, poi ci mettiamo eleganti e usciamo a festeggiare con una pizza.</p>
+        <p class="lead">Un piccolo appuntamento in due tempi: ti preparo in anticipo una torta d’autunno tutta per te, poi la mangiamo insieme guardando un film e ci mettiamo eleganti per uscire a festeggiare con una pizza.</p>
         <div class="date" aria-label="Data dell'appuntamento"><span class="date-day">26</span><div class="date-copy"><strong>Sabato 26 settembre</strong>Un pomeriggio dolce e una sera tutta da assaporare.</div></div>
         <div class="timeline" aria-label="Programma della giornata">
-          <div class="moment"><div class="moment-icon">🎃</div><div><h2>Ore 16:00 · A casa mia</h2><p>Mangiamo la torta alla zucca che ti preparo e, mentre la gustiamo, guardiamo <em>You've Got Mail</em>: l’ho cercato abbastanza e mi sembra molto vibe autunnale e cozy. Se vuoi qualcos’altro va benissimo, però questa è la mia proposta. 🎬</p><a class="recipe-link" href="https://blog.giallozafferano.it/valeriaciccotti/torta-di-zucca/" target="_blank" rel="noopener">Apriamo la ricetta →</a></div></div>
+          <div class="moment"><div class="moment-icon">🎃</div><div><h2>Ore 16:00 · A casa mia</h2><p>Ti preparo in anticipo una torta alla zucca tutta per te e la mangiamo insieme mentre guardiamo <em>You've Got Mail</em>: l’ho cercato abbastanza e mi sembra molto vibe autunnale e cozy. Se vuoi qualcos’altro va benissimo, però questa è la mia proposta. 🎬</p><a class="recipe-link" href="https://blog.giallozafferano.it/valeriaciccotti/torta-di-zucca/" target="_blank" rel="noopener">La ricetta della torta →</a></div></div>
           <div class="moment"><div class="moment-icon">🍕</div><div><h2>Ore 20:00 · Da Pino</h2><p>Ci aspetta una pizza in Piazza dei Signori, tra luci calde, chiacchiere e una fetta da condividere.</p></div></div>
         </div>
         <div class="note"><strong>Dress code: elegante ✨</strong><p>Capelli ondulati, outfit curato e quel tocco speciale che ti fa sentire bellissima. Al resto penso io.</p></div>
-        <div class="reply"><h2>Ti va di venire?</h2><p id="message">Prometto zucca, pizza e una serata davvero nostra. ♡</p><div class="actions"><button id="yes" type="button">Sì, vengo! 🎃</button><button id="no" type="button">Ci penso</button></div></div>
+        <div class="reply"><h2>Ti va di venire?</h2><p id="message">Prometto una torta alla zucca preparata in anticipo per te, da mangiare insieme durante il film, e poi pizza. ♡</p><div class="actions"><button id="yes" type="button">Sì, vengo! 🎃</button><button id="no" type="button">Ci penso</button></div></div>
       </section>
     </article>
     <p class="credit">Foto: Da Pino · Piazza dei Signori · immagine dell’invito</p>
   </main>
-  <div class="success" id="success" hidden><div class="success-box"><div class="success-mark">✦</div><h2>Perfetto,<br>appuntamento fatto.</h2><p>Sabato 26 settembre: prima torta di zucca, poi pizza da Pino. Non vedo l’ora, Angelica.</p><p class="love-note">serata prenotata ♡</p></div></div>
+  <div class="success" id="success" hidden><div class="success-box"><div class="success-mark">✦</div><h2>Perfetto,<br>appuntamento fatto.</h2><p>Sabato 26 settembre: ti preparo in anticipo la torta alla zucca, la mangiamo insieme durante il film e poi andiamo da Pino. Non vedo l’ora, Angelica.</p><p class="love-note">serata prenotata ♡</p></div></div>
   <script>
     const yes = document.querySelector('#yes'); const no = document.querySelector('#no'); const actions = document.querySelector('.actions'); const message = document.querySelector('#message'); const success = document.querySelector('#success'); let noCount = 0;
-    const messages = ['Sicura? La torta di zucca ci aspetta 🎃','E poi una bella pizza in piazza 🍕','Prometto capelli ondulati e look elegante ✨','Ultimo pensiero: zucca, pizza e noi ♡'];
+    const messages = ['Sicura? La torta alla zucca che ti preparo in anticipo ci aspetta 🎃','La mangiamo insieme mentre guardiamo il film 🍰🎬','Prometto capelli ondulati e look elegante ✨','Ultimo pensiero: torta, film, pizza e noi ♡'];
     no.addEventListener('click', (event) => { event.preventDefault(); no.blur(); noCount += 1; message.textContent = messages[Math.min(noCount - 1, messages.length - 1)]; yes.style.transform = `scale(${Math.min(1 + noCount * .16, 1.75)})`; no.classList.add('is-moving'); const maxX = Math.max(8, actions.clientWidth - no.offsetWidth - 8); const maxY = Math.max(8, actions.clientHeight - no.offsetHeight - 8); no.style.left = `${8 + Math.random() * Math.max(0, maxX - 8)}px`; no.style.top = `${Math.random() * maxY}px`; });
     yes.addEventListener('click', () => { success.hidden = false; document.body.style.overflow = 'hidden'; });
   </script>
